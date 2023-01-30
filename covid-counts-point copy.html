@@ -93,17 +93,18 @@
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/light-v10', // style URL
             zoom: 3, // starting zoom
-            center: [-100, 40] // starting center
+            center: [-100, 40], // starting center
+            projection: 'albers'
         });
 
         async function geojsonFetch() {
-            let response = await fetch('assets\\us-covid-2020-rates.json');
+            let response = await fetch('assets/us-covid-2020-rates.json');
             let covid_rate_data = await response.json();
-            map.addSource('covid-rates', {
+            map.addSource('covid_rate_data', {
                 type: 'geojson',
                 data: covid_rate_data
             });
-
+            map.on('load', function loadingData() {
             map.addLayer({
                 'id': 'stateData-layer',
                 'type': 'fill',
@@ -111,26 +112,31 @@
                 'paint': {
                     'fill-color': [
                         'step',
-                        ['get', 'density'],
+                        ['get', 'rates'],
                         '#FFEDA0', // stop_output_0
                         10, // stop_input_0
                         '#FED976', // stop_output_1
                         20, // stop_input_1
                         '#FEB24C', // stop_output_2
-                        50, // stop_input_2
+                        30, // stop_input_2
                         '#FD8D3C', // stop_output_3
-                        100, // stop_input_3
+                        40, // stop_input_3
                         '#FC4E2A', // stop_output_4
-                        200, // stop_input_4
+                        50, // stop_input_4
                         '#E31A1C', // stop_output_5
-                        500, // stop_input_5
+                        60, // stop_input_5
                         '#BD0026', // stop_output_6
-                        1000, // stop_input_6
-                        "#800026" // stop_output_7
+                        70, // stop_input_6
+                        '#800026',
+                        80,
+                        '#800026',
+                        90,
+                        '#800026',
                     ],
-                    'fill-outline-color': '#BBBBBB',
+                    'fill-outline-color': '#cf0a0a',
                     'fill-opacity': 0.7,
                 }
+            });
             });
         }
 

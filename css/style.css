@@ -45,6 +45,7 @@ body {
     padding: 10px 20px 10px 10px;
     border-radius: 3px;
     text-align: center;
+    font-family: 'Open sans', sans-serif;
 }
 
 /* each line for a break */
@@ -60,10 +61,10 @@ body {
     margin-top: 5px;
     border-radius: 50%;
     border-style: solid;
-    border-color: white;
+    border-color: black;
     border-width: 2px;
     opacity: 0.9;
-    margin-right: 27px;
+    margin-right: 33px;
 }
 
 /* the label for the dot */
