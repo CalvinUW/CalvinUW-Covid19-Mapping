@@ -3,33 +3,22 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Interactive Web Mapping</title>
+    <title>Covid-19 Case Count Map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href=https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
     <link rel="stylesheet" href="./css/style.css"/>
 </head>
 
-<body id="rates">
+<body id="counts">
     <div id="map"></div>
-    <div class='map-overlay' id='features'>
-        <h2>2020 Covid-19 Case Rate</h2>
-        <div id='text-description'>
-            <p>Hover over a state!</p>
-        </div>
-    </div>
-    <button onclick="myFunction()">Description</button>
-    <div id="info">
-        This map shows the rate of covid-19 cases across each county in America, for the 2020 year. The data for this
-        map was provided through the New York Times Covid-19 statistics tracking.
-    </div>
+    <div id="legend"></div>
     <div id="title">
-        U.S. County Covid-19 Case Rates
+        Covid-19 Case Counts
     </div>
     <div id="subtitle">
         Data as of 2020
     </div>
-    <div class='map-overlay' id='legend' style="text-align: left;"></div>
     <script src="js/main.js"></script>
 
 </body>

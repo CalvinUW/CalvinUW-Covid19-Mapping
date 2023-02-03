@@ -7,6 +7,9 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
 }
 
@@ -89,7 +92,7 @@ a {
     border-color: rgba(0, 0, 0, 0.2);
     margin-left: 20px;
     font-family: Arial, sans-serif;
-    overflow: auto;
+    overfow: auto;
     border-radius: 3px;
 }
 
