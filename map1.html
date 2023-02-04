@@ -13,15 +13,20 @@
 <body id="rates">
     <div id="map"></div>
     <div class='map-overlay' id='features'>
-        <h2>2020 Covid-19 Case Rate</h2>
+        <h2>2020 Covid-19 Case Rate:</h2>
         <div id='text-description'>
             <p>Hover over a state!</p>
         </div>
     </div>
-    <button onclick="myFunction()">Description</button>
-    <div id="info">
-        This map shows the rate of covid-19 cases across each county in America, for the 2020 year. The data for this
-        map was provided through the New York Times Covid-19 statistics tracking.
+    <button style="bottom: 260px;" onclick="myFunction()">Description</button>
+    <div id="info" >
+        This map utilizes MapBox API to display the Covid-19 case rate per 1,000 people of United States counties in the 2020 year.<br>
+        <br>
+        The data used in this map was gathered from <a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">The New York Times Covid-19 data repository</a> and <a href="https://data.census.gov/table?g=0100000US$050000&d=ACS+5-Year+Estimates+Data+Profiles&tid=ACSDP5Y2018.DP05&hidePreview=true">The American Community Survey's Population data</a>. The data were additionally aggregated by Steven Bao.<br>
+        <br>
+        The county geometries/boundaries used in this map were provided by <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">The United States Census Bureau</a>.<br>
+        <br>
+        This map was made by Calvin Standaert as part of an assignment in the University of Washington's Winter 2023 Advanced Digital Geographies class (GEOG 458) taught by Professor Bo Zhao.
     </div>
     <div id="title">
         U.S. County Covid-19 Case Rates
@@ -29,7 +34,7 @@
     <div id="subtitle">
         Data as of 2020
     </div>
-    <div class='map-overlay' id='legend' style="text-align: left;"></div>
+    <div class='map-overlay' id='legend' style="text-align: left; width: 160px;"></div>
     <script src="js/main.js"></script>
 
 </body>

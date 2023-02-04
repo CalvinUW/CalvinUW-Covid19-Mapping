@@ -69,7 +69,7 @@ if (page == 'counts') {
         map.on('click', 'covid-point', (event) => {
             new mapboxgl.Popup()
                 .setLngLat(event.features[0].geometry.coordinates)
-                .setHTML(`<strong>Case Count:</strong> ${event.features[0].properties.cases}`)
+                .setHTML(`<strong>State:</strong> ${event.features[0].properties.state} <br> <strong>County:</strong> ${event.features[0].properties.county} <br> <strong>Case Count:</strong> ${event.features[0].properties.cases}`)
                 .addTo(map);
         });
     });
@@ -161,7 +161,7 @@ if (page == 'counts') {
             ];
 
             const legend = document.getElementById('legend');
-            legend.innerHTML = "<b>Covid-19 Case Rate<br>(Cases/Population)</b><br><br>";
+            legend.innerHTML = "<b>Covid-19 Case Rate:<br>(Cases Per 1,000 People)</b><br><br>";
 
             layers.forEach((layer, i) => {
                 const color = colors[i];
@@ -184,21 +184,21 @@ if (page == 'counts') {
                     layers: ['covid_rate_data-layer']
                 });
                 document.getElementById('text-description').innerHTML = state.length ?
-                    `<h3>${state[0].properties.state}, ${state[0].properties.county} County</h3><p><strong><em>${state[0].properties.rates}</strong> Cases/Population</em></p>` :
-                    `<p>Hover over a state!</p>`;
+                    `<h3>${state[0].properties.state}, ${state[0].properties.county} County</h3><p><strong><em>${state[0].properties.rates}</strong> Cases Per 1,000 People</em></p>` :
+                    `<p>Hover over a county!</p>`;
             });
         });
     }
 
     geojsonFetch();
 
-    function myFunction() { // A simle function that shows map info when a button is clicked
-        var x = document.getElementById("info");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
+}
+function myFunction() { // A simple function that shows map info when a button is clicked
+    var x = document.getElementById("info");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
 }
 map.setMaxBounds(mapBoundaries); // set map boundaries
