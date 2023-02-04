@@ -30,6 +30,9 @@ The second map contained in this project is a proportional symbol map, wherein t
 
 [The United States Census Bureau County Boundaries](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)
 
+### Libraries Used:
+Mapbox API
+
 ### Credit:
 
 Professor Bo Zhao - Map Frameworks
